@@ -1,0 +1,76 @@
+
+showMessage.jsp:
+
+<%@page
+	import="com.sun.org.apache.xml.internal.serializer.utils.StringToIntTable"%>
+<%@ page language="java" import="java.util.*"
+	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	background: RGBA(38, 38, 38, 1);
+}
+ 
+div {
+	width: 800px; //
+	border: 1px solid RGBA(100, 90, 87, 1);
+	color: white;
+}
+ 
+span {
+	font-size: 20px;
+	font-weight: bold;
+}
+ 
+.span0 {
+	color: red;
+	font-size: 25px;
+}
+ 
+.span1 {
+	color: green;
+}
+ 
+.span2 {
+	color: orange;
+}
+ 
+.span3 {
+	color: green;
+}
+ 
+.span4 {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<div>
+		<%
+			Object o = application.getAttribute("message");
+			if (o == null) {
+				out.print("暂时还没有留言呢");
+			} else {
+				Vector<String> v = (Vector<String>) o;
+				for (int i = v.size() - 1; i >= 0; i--) {
+					// 注意必须用/.	String[] st1 = v.get(i).split("/.");
+					// 				for (int j = 0; j < st1.length; j++) {
+					// 					out.print(st1[j] + "<br>");
+					// 				}
+					// 				out.print("<br>");
+ 
+					StringTokenizer st = new StringTokenizer(v.get(i), ".");
+					while (st.hasMoreElements()) {
+						out.print(st.nextToken() + "<br>");
+					}
+ 
+				}
+			}
+		%>
+	</div>
+</body>
+</html>
