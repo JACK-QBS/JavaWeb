@@ -1,0 +1,25 @@
+
+forEach 实现一个九九乘法表
+
+
+<%@ page language="java" contentType="text/html; charset=GBK"
+	pageEncoding="GBK"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>九九乘法表</title>
+</head>
+<body>
+	九九乘法表
+	<table border=1>
+		<c:forEach var="i" begin="1" end="9">
+				<tr>
+				<c:forEach var="j" begin="1" end="${i}">
+					<td>${i}×${j}=${i*j}</td>
+				</c:forEach>
+				</tr>
+		</c:forEach>
+	</table>
+</body>
+</html>
