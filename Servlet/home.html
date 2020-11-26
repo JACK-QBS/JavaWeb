@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <script src="js/jquery@3.3.1/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#loginBtn").click(function () {//按钮绑定点击事件
+                $.ajax({
+                    type:"post",
+                    url:"loginJSON",
+                    dataType:"json",// 响应体中的数据格式
+                    data:{//请求数据
+                        username:$("#username").val(),
+                        password:$("#password").val(),
+                    },
+                    success(r) {
+                        //alert(JSON.stringify(r))
+                        if (r.success()) {
+                            $("#container").hide(); //隐藏
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+      终于进来了！！
+
+          用户名： <input id="username" type="text" name="username"><br>
+          密码：   <input id="password" type="password" name="password"><br>
+          <input id="loginBtn" type="button" value="登录">
+
+      <p1>第1篇文章</p1>
+      <p>第2篇文章</p>
+      <p>第3篇文章</p>
+
+</body>
+</html>
