@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+<body>
+    <table>
+        <thead>
+             <tr>
+                 <th>#ID</th>
+                 <th>谁</th>
+                 <th>何时</th>
+                 <th>说了什么</th>
+             </tr>
+        </thead>
+        <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>孙悟空</td>
+                 <td>2020-12-09 20:21:33</td>
+                 <td>我爱吃桃子</td>
+             </tr>
+        </tbody>
+    </table>
+
+<form method="post" action="post-message.api">
+    who: <input type="text" name="who"><br>
+    what: <input type="text" name="what"><br>
+
+    <button>发表留言</button>
+</form>
+
+</body>
+</html>
